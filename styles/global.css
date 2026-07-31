@@ -1,0 +1,81 @@
+:root {
+
+   --color-black: #010202;
+   --color-white: #ffffff;
+   --color-surface: #ffffff;          
+   --color-bg: #ffffff;               
+  --color-gray-fill: #f4f4f4;       
+  --color-gray-line: #e6e6e6;       
+  --color-gray-muted: #8c8c90;       
+  --color-gray-faint: #74747a;       
+
+
+
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Archivo', sans-serif;
+  --font-impact: 'Archivo Black', sans-serif;
+  --font-accent: 'Playfair Display', serif;
+
+  --fs-2xs: 0.75rem;
+  --fs-xs: 0.875rem;
+  --fs-sm: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.3125rem;
+  --fs-xl: 1.625rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.375rem;
+  --fs-4xl: 3rem;
+  --fs-5xl: 3.125rem;
+  --fs-6xl: 4.1875rem;
+  --fs-7xl: 5.625rem;
+
+  --fs-hero-primary: clamp(4.5rem, 11.2vw, 10.5rem);
+  --fs-hero-secondary: clamp(1.6rem, 4.8vw, 3.2rem);
+
+  --fluid-min-vw: 23.4375rem;
+  --fluid-max-vw: 100rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  --radius-small: 8px;
+  --radius-card: 16px;
+  --radius-module: 24px;
+  --radius-pill: 999px;
+
+  --breakpoint-mobile: 375px;
+  --breakpoint-tablet: 768px;
+
+  --container-max: min(1600px, 88vw);
+  --padding-mobile: var(--space-8);
+  --padding-tablet: var(--space-10);
+
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-fast: ease-out;
+
+  --duration-fast: 300ms;
+  --duration-base: 600ms;
+  --duration-reveal-body: 700ms;
+  --duration-reveal-heading: 850ms;
+
+  --reveal-distance-body: 24px;
+  --reveal-distance-heading: 32px;
+
+}
