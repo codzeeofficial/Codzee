@@ -1,18 +1,12 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
-interface FadeOnFooterEnterResult {
-  footerRef: React.RefObject<HTMLElement | null>
-  shouldFade: boolean
-}
-
-export function useFadeOnFooterEnter(): FadeOnFooterEnterResult {
-  const footerRef = useRef<HTMLElement | null>(null)
+export function useFadeOnFooterEnter(footerId: string): boolean {
   const [shouldFade, setShouldFade] = useState(false)
 
   useEffect(() => {
-    const footer = footerRef.current
+    const footer = document.getElementById(footerId)
     if (!footer) return
 
     const observer = new IntersectionObserver(
@@ -25,7 +19,7 @@ export function useFadeOnFooterEnter(): FadeOnFooterEnterResult {
     observer.observe(footer)
 
     return () => observer.disconnect()
-  }, [])
+  }, [footerId])
 
-  return { footerRef, shouldFade }
+  return shouldFade
 }

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from './PillButton.module.css'
 
-type PillButtonTier = 'dark' | 'outline' | 'accent'
+type PillButtonTier = 'dark' | 'light' | 'outline' | 'accent'
 
 interface PillButtonProps {
   tier: PillButtonTier

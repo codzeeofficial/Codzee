@@ -11,6 +11,19 @@
   transition: background-color var(--duration-fast) var(--ease-fast),
     color var(--duration-fast) var(--ease-fast),
     border-color var(--duration-fast) var(--ease-fast);
+    white-space: nowrap;
+width: fit-content;
+}
+
+.light {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-white);
+}
+
+.light:hover {
+  background-color: transparent;
+  color: var(--color-white);
 }
 
 .dark {
