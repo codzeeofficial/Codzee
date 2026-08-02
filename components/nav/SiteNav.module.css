@@ -1,5 +1,11 @@
 .desktopNavWrapper {
   display: none;
+  line-height: 0;
+}
+
+.logo,
+.link {
+  line-height: 1;
 }
 
 @media (min-width: 1024px) {

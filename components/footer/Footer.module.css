@@ -1,7 +1,5 @@
 .footerOuter {
   padding: var(--space-2);
-  margin-top: 200px;
-  padding-bottom: 0;
   box-sizing: border-box;
 }
 
