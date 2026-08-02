@@ -1,0 +1,103 @@
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 96px;
+  padding-bottom: var(--space-16);
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-top: 0;
+  }
+}
+
+.containerWrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-10);
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--padding-mobile);
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .containerWrapper {
+    padding-inline: var(--padding-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .containerWrapper {
+    padding-inline: 0;
+    padding-top: var(--space-56);
+    gap: var(--space-32);
+  }
+}
+
+.headingWrapper {
+  width: fit-content;
+  max-width: 100%;
+  opacity: 0;
+  transform: translateY(var(--reveal-distance-heading));
+  transition: opacity var(--duration-reveal-heading) var(--ease-standard)
+      var(--duration-entrance-delay),
+    transform var(--duration-reveal-heading) var(--ease-standard)
+      var(--duration-entrance-delay);
+}
+
+.headingWrapper.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  font-weight: var(--fw-regular);
+}
+
+.lead,
+.close {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--fs-hero-secondary);
+  color: var(--color-black);
+  line-height: 1.15;
+}
+
+.close {
+  align-self: flex-end;
+}
+
+.emphasis {
+  font-family: var(--font-impact);
+  font-size: var(--fs-hero-primary);
+  color: var(--color-black);
+  line-height: 0.95;
+}
+
+.ctaWrapper {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  opacity: 0;
+  transform: translateY(var(--reveal-distance-body));
+  transition: opacity var(--duration-reveal-body) var(--ease-standard)
+      calc(var(--duration-entrance-delay) + var(--stagger-heading-body)),
+    transform var(--duration-reveal-body) var(--ease-standard)
+      calc(var(--duration-entrance-delay) + var(--stagger-heading-body));
+}
+
+.ctaWrapper.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
