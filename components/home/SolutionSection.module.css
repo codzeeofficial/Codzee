@@ -1,0 +1,112 @@
+.section {
+  width: var(--container-max);
+  margin-inline: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-32);
+  padding-block: var(--space-16);
+  padding-inline: var(--padding-mobile);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold);
+  color: var(--color-black);
+  line-height: 1.1;
+  font-size: var(--fs-hero-secondary);
+  width: fit-content;
+}
+
+.supporting {
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  color: var(--color-black);
+  font-size: clamp(
+    1rem,
+    calc(1rem + 0.3125rem * ((100vw - var(--fluid-min-vw)) / (var(--fluid-max-vw) - var(--fluid-min-vw)))),
+    1.3125rem
+  );
+  line-height: 1.5;
+  padding-top: var(--space-8);
+  width: fit-content;
+  max-width: 40ch;
+}
+
+.panelRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.panel {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-gray-line);
+  border-radius: var(--radius-card);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.panelTag {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-md);
+  color: var(--color-black);
+}
+
+.panelDescription {
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--color-black);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-inline: var(--padding-tablet);
+  }
+
+  .head {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 80px;
+  }
+
+  .heading {
+    flex: 1.25;
+    width: auto;
+  }
+
+  .supporting {
+    flex: 1;
+    width: auto;
+    max-width: none;
+    padding-top: 0;
+    padding-left: 0;
+  }
+
+  .panelRow {
+    flex-direction: row;
+    gap: var(--space-8);
+  }
+
+  .panel {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-inline: 0;
+  }
+}

@@ -15,7 +15,7 @@ export const homeContent: HomeContent = {
   },
 
   solution: {
-    heading: 'The system was never the problem. A decision was.',
+    heading: 'The system was never the problem. The moment it was built for was.',
     supportingText:
       'Most projects don\u2019t fail because the technology was wrong. They fail because a decision got made before the problem was fully understood \u2014 the wrong tool, a rushed shortcut, or nothing built at all when something clearly should have been.',
     situations: [
@@ -68,7 +68,7 @@ export const homeContent: HomeContent = {
   studio: {
     label: 'Who are we?',
     leadText:
-      'We\u2019re a product engineering studio. We build what\u2019s missing, and we fix what got built with the wrong tool. Every project gets our full attention \u2014 nothing else runs alongside it.',
+      'A product engineering studio. We start with the problem living inside a business, not with a deliverable — the software gets built around whatever solving that problem actually requires. Code is the tool. Understanding the problem is the real work.',
     primaryCta: { label: 'About Codzee', href: ROUTES.about },
     secondaryCta: { label: 'Meet the Team', href: ROUTES.team },
   },
@@ -81,7 +81,7 @@ export const homeContent: HomeContent = {
   },
 
   process: {
-    heading: 'What happens after you reach out.',
+    heading: 'What happens after you reach out?',
     supportingText:
       'There\u2019s a clear path from a first conversation to a finished product, and every step of it happens before you have to guess what comes next.',
     stages: [],

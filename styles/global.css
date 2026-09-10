@@ -49,6 +49,10 @@ button {
   --color-white-muted-70: rgba(255, 255, 255, 0.7);
   --color-white-muted-83: rgba(255, 255, 255, 0.83);
 
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Archivo', sans-serif;
+  --font-impact: 'Archivo Black', sans-serif;
+  --font-accent: 'Playfair Display', serif;
 
 
   --fs-2xs: 0.75rem;
@@ -125,6 +129,8 @@ button {
   --duration-base: 600ms;
   --duration-reveal-body: 700ms;
   --duration-reveal-heading: 850ms;
+  --stagger-heading-to-body: 120ms;
+  --duration-entrance-space: 1000ms;
 
   --reveal-distance-body: 24px;
   --reveal-distance-heading: 32px;

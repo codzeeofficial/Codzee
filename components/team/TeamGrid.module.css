@@ -1,0 +1,57 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: var(--space-12);
+  padding: 0 var(--space-8);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.photoWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-color: var(--color-gray-fill);
+}
+
+.photo {
+  object-fit: cover;
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  margin-top: var(--space-5);
+}
+
+.role {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: var(--space-1);
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  margin-top: var(--space-3);
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(16.25rem, 1fr));
+    column-gap: var(--space-8);
+    row-gap: var(--space-16);
+    padding: 0;
+    width: var(--container-max);
+    margin: 0 auto;
+  }
+}

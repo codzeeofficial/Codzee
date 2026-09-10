@@ -8,15 +8,21 @@ interface NotchCardProps {
   children: React.ReactNode
 }
 
+const cornerClassMap: Record<NotchCorner, string> = {
+  'top-left': styles.topLeft,
+  'top-right': styles.topRight,
+  'bottom-left': styles.bottomLeft,
+  'bottom-right': styles.bottomRight,
+}
+
 export default function NotchCard({ corner, label, children }: NotchCardProps) {
-  const cornerClass = corner
-    .split('-')
-    .map((part, i) => (i === 0 ? part : part[0].toUpperCase() + part.slice(1)))
-    .join('')
+  const variantClass = cornerClassMap[corner]
 
   return (
-    <div className={`${styles.card} ${styles[cornerClass]}`}>
-      <span className={styles.notch}>{label}</span>
+    <div className={`${styles.card} ${variantClass}`}>
+      <div className={styles.notchSlot}>
+        <span className={styles.label}>{label}</span>
+      </div>
       <div className={styles.content}>{children}</div>
     </div>
   )

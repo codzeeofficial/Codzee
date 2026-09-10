@@ -1,0 +1,90 @@
+.processSection {
+  padding: var(--space-16) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--space-8);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--space-4);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-hero-secondary);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+}
+
+.supportingText {
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-md);
+  line-height: 1.5;
+  color: var(--color-gray-faint);
+  max-width: 48ch;
+}
+
+.spine {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--space-12);
+  border-left: 1px solid var(--color-gray-line);
+  padding-left: var(--space-6);
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--space-2);
+}
+
+.stageTitle {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-lg);
+  color: var(--color-black);
+}
+
+.stageDescription {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--color-gray-faint);
+}
+
+.stageNumber {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  color: var(--color-gray-faint);
+}
+
+@media (min-width: 768px) {
+  .processSection {
+    padding: var(--space-20) var(--space-10);
+  }
+}
+
+@media (min-width: 1024px) {
+  .processSection {
+    padding: var(--space-32) 0;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    row-gap: var(--space-16);
+  }
+
+  .head {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    column-gap: var(--space-20);
+    align-items: start;
+  }
+
+  .supportingText {
+    max-width: none;
+  }
+}

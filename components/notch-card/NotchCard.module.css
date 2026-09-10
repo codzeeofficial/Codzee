@@ -2,51 +2,168 @@
   position: relative;
   background-color: var(--color-black);
   border-radius: var(--radius-module);
-  padding: var(--space-16);
+  padding: var(--space-10);
+  width: 100%;
 }
 
-.notch {
+.notchSlot {
   position: absolute;
-  display: inline-flex;
+  background-color: var(--color-bg);
+  padding: var(--space-2) var(--space-4);
+  display: flex;
   align-items: center;
-  background-color: var(--color-white);
+  z-index: 2;
+}
+
+.label {
   color: var(--color-black);
   font-family: var(--font-body);
   font-size: var(--fs-2xs);
-  font-weight: var(--fw-medium);
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-small);
-}
-
-.topLeft .notch {
-  top: 0;
-  left: 0;
-  border-top-left-radius: var(--radius-module);
-  border-bottom-right-radius: var(--radius-small);
-}
-
-.topRight .notch {
-  top: 0;
-  right: 0;
-  border-top-right-radius: var(--radius-module);
-  border-bottom-left-radius: var(--radius-small);
-}
-
-.bottomLeft .notch {
-  bottom: 0;
-  left: 0;
-  border-bottom-left-radius: var(--radius-module);
-  border-top-right-radius: var(--radius-small);
-}
-
-.bottomRight .notch {
-  bottom: 0;
-  right: 0;
-  border-bottom-right-radius: var(--radius-module);
-  border-top-left-radius: var(--radius-small);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .content {
   color: var(--color-white);
-  padding-top: var(--space-8);
+}
+
+.topLeft {
+  border-top-left-radius: 0;
+  padding-top: var(--space-14);
+}
+
+.topLeft .notchSlot {
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: var(--radius-card);
+}
+
+.topLeft .notchSlot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: calc(-1 * var(--radius-card));
+  width: var(--radius-card);
+  height: var(--radius-card);
+  background: transparent;
+  border-top-left-radius: var(--radius-card);
+  box-shadow: -6px -6px 0 6px var(--color-bg);
+}
+
+.topLeft .notchSlot::before {
+  content: '';
+  position: absolute;
+  bottom: calc(-1 * var(--radius-card));
+  left: 0;
+  width: var(--radius-card);
+  height: var(--radius-card);
+  background: transparent;
+  border-top-left-radius: var(--radius-card);
+  box-shadow: -6px -6px 0 6px var(--color-bg);
+}
+
+.topRight {
+  border-top-right-radius: 0;
+  padding-top: var(--space-14);
+}
+
+.topRight .notchSlot {
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: var(--radius-card);
+}
+
+.topRight .notchSlot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(-1 * var(--radius-card));
+  width: var(--radius-card);
+  height: var(--radius-card);
+  background: transparent;
+  border-top-right-radius: var(--radius-card);
+  box-shadow: 6px -6px 0 6px var(--color-bg);
+}
+
+.topRight .notchSlot::before {
+  content: '';
+  position: absolute;
+  bottom: calc(-1 * var(--radius-card));
+  right: 0;
+  width: var(--radius-card);
+  height: var(--radius-card);
+  background: transparent;
+  border-top-right-radius: var(--radius-card);
+  box-shadow: 6px -6px 0 6px var(--color-bg);
+}
+
+.bottomLeft {
+  border-bottom-left-radius: 0;
+  padding-bottom: var(--space-14);
+}
+
+.bottomLeft .notchSlot {
+  bottom: 0;
+  left: 0;
+  border-top-right-radius: var(--radius-card);
+}
+
+.bottomLeft .notchSlot::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: calc(-1 * var(--radius-card));
+  width: var(--radius-card);
+  height: var(--radius-card);
+  background: transparent;
+  border-bottom-left-radius: var(--radius-card);
+  box-shadow: -6px 6px 0 6px var(--color-bg);
+}
+
+.bottomLeft .notchSlot::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--radius-card));
+  left: 0;
+  width: var(--radius-card);
+  height: var(--radius-card);
+  background: transparent;
+  border-bottom-left-radius: var(--radius-card);
+  box-shadow: -6px 6px 0 6px var(--color-bg);
+}
+
+.bottomRight {
+  border-bottom-right-radius: 0;
+  padding-bottom: var(--space-14);
+}
+
+.bottomRight .notchSlot {
+  bottom: 0;
+  right: 0;
+  border-top-left-radius: var(--radius-card);
+}
+
+.bottomRight .notchSlot::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(-1 * var(--radius-card));
+  width: var(--radius-card);
+  height: var(--radius-card);
+  background: transparent;
+  border-bottom-right-radius: var(--radius-card);
+  box-shadow: 6px 6px 0 6px var(--color-bg);
+}
+
+.bottomRight .notchSlot::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--radius-card));
+  right: 0;
+  width: var(--radius-card);
+  height: var(--radius-card);
+  background: transparent;
+  border-bottom-right-radius: var(--radius-card);
+  box-shadow: 6px 6px 0 6px var(--color-bg);
 }
