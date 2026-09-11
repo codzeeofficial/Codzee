@@ -10,11 +10,6 @@
   }
 }
 
-.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .stackedIndex {
   display: flex;
   flex-direction: column;
@@ -269,4 +264,9 @@
   transition:
     opacity var(--duration-reveal-body) var(--ease-standard) calc(var(--stagger-heading-to-body) * 2),
     transform var(--duration-reveal-body) var(--ease-standard) calc(var(--stagger-heading-to-body) * 2);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
