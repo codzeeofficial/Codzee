@@ -167,3 +167,11 @@
   border-bottom-right-radius: var(--radius-card);
   box-shadow: 6px 6px 0 6px var(--color-bg);
 }
+
+.large {
+  padding: var(--space-20);
+}
+
+.bottomRight.large {
+  padding-bottom: var(--space-28);
+}
