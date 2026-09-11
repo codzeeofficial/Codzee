@@ -9,7 +9,7 @@ export default function StudioStorySection() {
 
   return (
     <section className={styles.section}>
-      <div ref={ref} className={styles.grid}>
+      <div ref={ref as React.RefObject<HTMLDivElement>} className={styles.grid}>
         <h2 className={isVisible ? `${styles.heading} ${styles.visible}` : styles.heading}>
           {aboutContent.studioStory.heading}
         </h2>
