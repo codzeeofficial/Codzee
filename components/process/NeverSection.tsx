@@ -26,15 +26,12 @@ export default function NeverSection() {
         </div>
         <div
           ref={itemsRef as React.RefObject<HTMLDivElement>}
-          className={isItemsVisible ? `${styles.itemsGrid} ${styles.visible}` : styles.itemsGrid}
+          className={isItemsVisible ? `${styles.itemsList} ${styles.visible}` : styles.itemsList}
         >
           {never.items.map((item, index) => (
-            <div key={index} className={styles.itemCard}>
-              <div className={styles.cardHeader}>
-                <span className={styles.indexTag}>{`0${index + 1}`}</span>
-              </div>
-              <h3 className={styles.itemLead}>{item.lead}</h3>
-              <p className={styles.itemDetail}>{item.detail}</p>
+            <div key={index} className={styles.statementBlock}>
+              <h3 className={styles.statementLead}>{item.lead}</h3>
+              <p className={styles.statementDetail}>{item.detail}</p>
             </div>
           ))}
         </div>

@@ -14,7 +14,7 @@ export default function ClosingSection() {
     <section className={styles.section}>
       <div
         ref={ref as React.RefObject<HTMLDivElement>}
-        className={isVisible ? `${styles.card} ${styles.visible}` : styles.card}
+        className={isVisible ? `${styles.inner} ${styles.visible}` : styles.inner}
       >
         <p className={styles.line}>{closing.line}</p>
         <div className={styles.actions}>

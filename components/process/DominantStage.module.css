@@ -1,19 +1,24 @@
 .section {
-  padding-block: var(--space-8);
-  padding-inline: var(--space-6);
+  margin: 0;
+  padding: var(--space-10) var(--space-2);
+  scroll-margin-top: var(--space-24);
+  width: 100%;
+  box-sizing: border-box;
   opacity: 0;
   transform: translateY(var(--reveal-distance-body));
-  transition:
-    opacity var(--duration-reveal-body) var(--ease-standard),
+  transition: opacity var(--duration-reveal-body) var(--ease-standard),
     transform var(--duration-reveal-body) var(--ease-standard);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--space-16) var(--space-2);
+  }
 }
 
 @media (min-width: 1024px) {
   .section {
-    padding-block: var(--space-12);
-    padding-inline: var(--space-16);
-    max-width: var(--container-max);
-    margin-inline: auto;
+    padding: var(--space-20) var(--space-2);
   }
 }
 
@@ -61,21 +66,75 @@
   letter-spacing: var(--ls-tight);
 }
 
-.body {
+.paragraphsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: var(--max-w-process-wide);
+}
+
+.paragraph {
   margin: 0;
   font-family: var(--font-body);
   font-weight: var(--fw-regular);
   color: var(--color-white-muted-83);
   font-size: var(--fs-md);
   line-height: var(--lh-relaxed);
-  max-width: var(--max-w-process-wide);
+}
+
+.takeawayBox {
+  margin-top: var(--space-2);
+  padding-left: var(--space-4);
+  border-left: var(--bw-medium) solid var(--color-white);
+}
+
+.takeawayText {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-white);
+  line-height: var(--lh-snug);
+}
+
+.metaStrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-half);
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-surface-dark-card);
+  border: var(--bw-hairline) solid var(--color-border-dark-strong);
+  border-radius: var(--radius-small);
+}
+
+.metaLabel {
+  font-family: var(--font-body);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-dark-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+.metaValue {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-dark-primary);
 }
 
 .assuranceGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
-  margin-top: var(--space-4);
+  margin-top: var(--space-6);
 }
 
 @media (min-width: 768px) {

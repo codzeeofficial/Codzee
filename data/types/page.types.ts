@@ -197,12 +197,20 @@ export interface LegalPageContent {
 
 export type ProcessStageVariant = 'A' | 'B' | 'C' | 'D' | 'E' | 'dominant'
 
+export interface ProcessStageMeta {
+  label: string
+  value: string
+}
+
 export interface ProcessStage {
   id: string
   number: string
+  title: string
   variant: ProcessStageVariant
   headline?: string
-  body: string
+  paragraphs: string[]
+  takeaway?: string
+  metaDetails?: ProcessStageMeta[]
   statLabel?: string
   stat?: string
 }

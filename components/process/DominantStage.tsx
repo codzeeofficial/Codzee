@@ -14,6 +14,7 @@ export default function DominantStage({ stage }: DominantStageProps) {
 
   return (
     <section
+      id={`stage-${stage.id}`}
       ref={ref as React.RefObject<HTMLElement>}
       className={isVisible ? `${styles.section} ${styles.visible}` : styles.section}
     >
@@ -24,7 +25,29 @@ export default function DominantStage({ stage }: DominantStageProps) {
             <span className={styles.statusLabel}>Core Production Stage · Continuous Delivery</span>
           </div>
           <h2 className={styles.heading}>{stage.headline}</h2>
-          <p className={styles.body}>{stage.body}</p>
+          
+          <div className={styles.paragraphsGroup}>
+            {stage.paragraphs.map((p, i) => (
+              <p key={i} className={styles.paragraph}>{p}</p>
+            ))}
+          </div>
+
+          {stage.takeaway && (
+            <div className={styles.takeawayBox}>
+              <p className={styles.takeawayText}>{stage.takeaway}</p>
+            </div>
+          )}
+
+          {stage.metaDetails && stage.metaDetails.length > 0 && (
+            <div className={styles.metaStrip}>
+              {stage.metaDetails.map((meta, i) => (
+                <div key={i} className={styles.metaItem}>
+                  <span className={styles.metaLabel}>{meta.label}</span>
+                  <span className={styles.metaValue}>{meta.value}</span>
+                </div>
+              ))}
+            </div>
+          )}
 
           <div className={styles.assuranceGrid}>
             <div className={styles.assuranceCard}>

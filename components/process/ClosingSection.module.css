@@ -1,38 +1,40 @@
 .section {
   width: 100%;
-  padding-block: var(--space-16);
-  padding-inline: var(--space-6);
+  padding-block: var(--space-20);
+  padding-inline: var(--padding-mobile);
+  border-top: var(--bw-hairline) solid var(--color-border-subtle);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-inline: var(--padding-tablet);
+    padding-block: var(--space-24);
+  }
 }
 
 @media (min-width: 1024px) {
   .section {
-    padding-block: var(--space-24);
+    padding-block: var(--space-32);
     padding-inline: var(--space-16);
     max-width: var(--container-max);
     margin-inline: auto;
   }
 }
 
-.card {
-  background-color: var(--color-surface);
-  border: var(--bw-hairline) solid var(--color-border-card);
-  border-radius: var(--radius-card);
-  padding: var(--space-8);
+.inner {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-8);
+  max-width: var(--max-w-process-content);
   opacity: 0;
   transform: translateY(var(--reveal-distance-body));
-  transition:
-    opacity var(--duration-reveal-body) var(--ease-standard),
+  transition: opacity var(--duration-reveal-body) var(--ease-standard),
     transform var(--duration-reveal-body) var(--ease-standard);
-  box-shadow: var(--shadow-subtle);
 }
 
 @media (min-width: 1024px) {
-  .card {
-    padding: var(--space-12) var(--space-16);
-    gap: var(--space-8);
+  .inner {
+    gap: var(--space-10);
   }
 }
 
@@ -44,11 +46,16 @@
 .line {
   margin: 0;
   font-family: var(--font-body);
-  font-weight: var(--fw-regular);
+  font-weight: var(--fw-medium);
   color: var(--color-text-primary);
   font-size: var(--fs-xl);
   line-height: var(--lh-relaxed);
-  max-width: var(--max-w-process-content);
+}
+
+@media (min-width: 1024px) {
+  .line {
+    font-size: var(--fs-2xl);
+  }
 }
 
 .actions {
@@ -71,6 +78,7 @@
   color: var(--color-text-primary);
   font-family: var(--font-body);
   font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
   text-decoration: none;
   border-bottom: var(--bw-hairline) solid var(--color-gray-line);
   padding-bottom: var(--space-half);
