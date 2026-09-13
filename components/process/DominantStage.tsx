@@ -19,8 +19,36 @@ export default function DominantStage({ stage }: DominantStageProps) {
     >
       <NotchCard corner="bottom-right" label={`Stage ${stage.number}`} size="large">
         <div className={styles.content}>
+          <div className={styles.statusRow}>
+            <span className={styles.statusDot} aria-hidden="true" />
+            <span className={styles.statusLabel}>Core Production Stage · Continuous Delivery</span>
+          </div>
           <h2 className={styles.heading}>{stage.headline}</h2>
           <p className={styles.body}>{stage.body}</p>
+
+          <div className={styles.assuranceGrid}>
+            <div className={styles.assuranceCard}>
+              <span className={styles.assuranceIndex}>01</span>
+              <h3 className={styles.assuranceTitle}>Feature Verification</h3>
+              <p className={styles.assuranceDesc}>
+                Checked against requirements as each module completes before moving forward.
+              </p>
+            </div>
+            <div className={styles.assuranceCard}>
+              <span className={styles.assuranceIndex}>02</span>
+              <h3 className={styles.assuranceTitle}>Preview Deployments</h3>
+              <p className={styles.assuranceDesc}>
+                Interactive preview environments let you test real functioning interfaces early.
+              </p>
+            </div>
+            <div className={styles.assuranceCard}>
+              <span className={styles.assuranceIndex}>03</span>
+              <h3 className={styles.assuranceTitle}>Quality Gate</h3>
+              <p className={styles.assuranceDesc}>
+                Full type safety, integration testing, and zero deployment blockers before testing pass.
+              </p>
+            </div>
+          </div>
         </div>
       </NotchCard>
     </section>

@@ -1,35 +1,97 @@
 .section {
+  width: 100%;
+  padding-block: var(--space-16);
+  padding-inline: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: var(--space-24);
+    padding-inline: var(--space-16);
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: var(--bw-hairline) solid var(--color-border-card);
+  border-radius: var(--radius-card);
+  padding: var(--space-8);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: var(--space-6);
-  padding: var(--space-16) var(--space-6);
   opacity: 0;
   transform: translateY(var(--reveal-distance-body));
   transition:
     opacity var(--duration-reveal-body) var(--ease-standard),
     transform var(--duration-reveal-body) var(--ease-standard);
+  box-shadow: var(--shadow-subtle);
 }
 
 @media (min-width: 1024px) {
-  .section {
-    max-width: var(--container-max);
-    margin-inline: auto;
-    padding: var(--space-24) var(--space-16);
+  .card {
+    padding: var(--space-12) var(--space-16);
+    gap: var(--space-8);
   }
+}
+
+.visible {
+  opacity: var(--opacity-full);
+  transform: translateY(0);
 }
 
 .line {
   margin: 0;
   font-family: var(--font-body);
   font-weight: var(--fw-regular);
-  color: var(--color-black);
+  color: var(--color-text-primary);
   font-size: var(--fs-xl);
-  line-height: 1.5;
-  max-width: 35rem;
+  line-height: var(--lh-relaxed);
+  max-width: var(--max-w-process-content);
 }
 
-.visible {
-  opacity: 1;
-  transform: translateY(0);
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+@media (min-width: 1024px) {
+  .actions {
+    gap: var(--space-8);
+  }
+}
+
+.secondaryLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  text-decoration: none;
+  border-bottom: var(--bw-hairline) solid var(--color-gray-line);
+  padding-bottom: var(--space-half);
+  transition: border-color var(--duration-fast) var(--ease-fast);
+}
+
+@media (min-width: 1024px) {
+  .secondaryLink {
+    font-size: var(--fs-sm);
+  }
+}
+
+.secondaryLink:hover {
+  border-color: var(--color-text-primary);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform var(--duration-fast) var(--ease-fast);
+}
+
+.secondaryLink:hover .arrow {
+  transform: translate(var(--space-half), calc(-1 * var(--space-half)));
 }

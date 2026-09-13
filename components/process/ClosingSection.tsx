@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useScrollReveal } from '@/components/animations/useScrollReveal'
 import PillButton from '@/components/buttons/PillButton'
 import { processContent } from '@/data/pages/process'
@@ -10,14 +11,24 @@ export default function ClosingSection() {
   const { ref, isVisible } = useScrollReveal('body')
 
   return (
-    <section
-      ref={ref as React.RefObject<HTMLElement>}
-      className={isVisible ? `${styles.section} ${styles.visible}` : styles.section}
-    >
-      <p className={styles.line}>{closing.line}</p>
-      <PillButton tier="dark" href={closing.cta.href}>
-        {closing.cta.label}
-      </PillButton>
+    <section className={styles.section}>
+      <div
+        ref={ref as React.RefObject<HTMLDivElement>}
+        className={isVisible ? `${styles.card} ${styles.visible}` : styles.card}
+      >
+        <p className={styles.line}>{closing.line}</p>
+        <div className={styles.actions}>
+          <PillButton tier="dark" href={closing.cta.href}>
+            {closing.cta.label}
+          </PillButton>
+          <Link href="/work" className={styles.secondaryLink}>
+            Explore Finished Work
+            <span className={styles.arrow} aria-hidden="true">
+              ↗
+            </span>
+          </Link>
+        </div>
+      </div>
     </section>
   )
 }

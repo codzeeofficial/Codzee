@@ -218,6 +218,16 @@ button {
   --min-h-team-hero-desktop: 70vh;
   --min-h-about-hero-mobile: 50vh;
   --min-h-about-hero-desktop: 55vh;
+  --process-hero-size: clamp(2.25rem, 4vw, 3.5rem);
+  --process-stage-num-size: clamp(3rem, 6vw, 5.5rem);
+  --process-stage-head-size: clamp(1.75rem, 3vw, 2.5rem);
+  --process-qa-head-size: clamp(2rem, 3.5vw, 3rem);
+  --process-stat-size: clamp(3rem, 6vw, 6rem);
+  --process-grid-reversed: 0.4fr 0.6fr;
+  --process-margin-col: var(--space-20);
+  --max-w-process-content: 42.5rem;
+  --max-w-process-wide: 48rem;
+  --max-w-process-stat: 32rem;
 
   --flex-head-left: 1.25;
   --flex-head-right: 1;

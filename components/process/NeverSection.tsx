@@ -12,20 +12,30 @@ export default function NeverSection() {
   return (
     <section className={styles.section}>
       <div className={styles.row}>
-        <h2
-          ref={headingRef as React.RefObject<HTMLHeadingElement>}
-          className={isHeadingVisible ? `${styles.heading} ${styles.visible}` : styles.heading}
-        >
-          {never.heading}
-        </h2>
+        <div className={styles.headColumn}>
+          <div className={styles.kickerRow}>
+            <span className={styles.kickerDot} aria-hidden="true" />
+            <span className={styles.kicker}>Non-Negotiables</span>
+          </div>
+          <h2
+            ref={headingRef as React.RefObject<HTMLHeadingElement>}
+            className={isHeadingVisible ? `${styles.heading} ${styles.visible}` : styles.heading}
+          >
+            {never.heading}
+          </h2>
+        </div>
         <div
           ref={itemsRef as React.RefObject<HTMLDivElement>}
-          className={isItemsVisible ? `${styles.items} ${styles.visible}` : styles.items}
+          className={isItemsVisible ? `${styles.itemsGrid} ${styles.visible}` : styles.itemsGrid}
         >
           {never.items.map((item, index) => (
-            <p key={index} className={styles.item}>
-              <strong className={styles.lead}>{item.lead}</strong> {item.detail}
-            </p>
+            <div key={index} className={styles.itemCard}>
+              <div className={styles.cardHeader}>
+                <span className={styles.indexTag}>{`0${index + 1}`}</span>
+              </div>
+              <h3 className={styles.itemLead}>{item.lead}</h3>
+              <p className={styles.itemDetail}>{item.detail}</p>
+            </div>
           ))}
         </div>
       </div>

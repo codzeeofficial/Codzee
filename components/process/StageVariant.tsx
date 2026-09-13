@@ -18,49 +18,81 @@ export default function StageVariant({ stage }: StageVariantProps) {
       ref={ref as React.RefObject<HTMLElement>}
       className={`${styles.section} ${styles[`variant${stage.variant}`]}`}
     >
-      {stage.variant === 'A' && (
-        <div className={styles.stackedIndex}>
-          <span className={reveal(styles.stackedNumber)}>{stage.number}</span>
-          <h2 className={reveal(styles.stackedHeading)}>{stage.headline}</h2>
-          <p className={reveal(styles.stackedBody)}>{stage.body}</p>
-        </div>
-      )}
-
-      {stage.variant === 'B' && (
-        <div className={styles.marginNote}>
-          <span className={styles.marginNumber}>{stage.number}</span>
-          <div className={styles.marginNoteContent}>
-            <h2 className={reveal(styles.marginHeading)}>{stage.headline}</h2>
-            <p className={reveal(styles.marginBody)}>{stage.body}</p>
+      <div className={styles.cardContainer}>
+        {stage.variant === 'A' && (
+          <div className={styles.stackedIndex}>
+            <div className={styles.stageMetaHeader}>
+              <span className={styles.stageTag}>{`Stage ${stage.number}`}</span>
+              <span className={styles.stageSubtag}>Initial Intake</span>
+            </div>
+            <div className={styles.stackedContent}>
+              <span className={reveal(styles.stackedNumber)}>{stage.number}</span>
+              <h2 className={reveal(styles.stackedHeading)}>{stage.headline}</h2>
+              <p className={reveal(styles.stackedBody)}>{stage.body}</p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {stage.variant === 'C' && (
-        <div className={styles.questionAnswer}>
-          <span className={styles.stageLabel}>{`Stage ${stage.number}`}</span>
-          <h2 className={reveal(styles.qaHeading)}>{stage.headline}</h2>
-          <p className={reveal(styles.qaBody)}>{stage.body}</p>
-        </div>
-      )}
-
-      {stage.variant === 'D' && (
-        <div className={styles.reversedWeight}>
-          <div className={styles.headingColumn}>
-            <span className={reveal(styles.dNumber)}>{stage.number}</span>
-            <h2 className={reveal(styles.dHeading)}>{stage.headline}</h2>
+        {stage.variant === 'B' && (
+          <div className={styles.marginNote}>
+            <div className={styles.stageMetaHeader}>
+              <span className={styles.stageTag}>{`Stage ${stage.number}`}</span>
+              <span className={styles.stageSubtag}>Interface & Architecture</span>
+            </div>
+            <div className={styles.marginRow}>
+              <div className={styles.marginNumberBox}>
+                <span className={styles.marginNumber}>{stage.number}</span>
+              </div>
+              <div className={styles.marginNoteContent}>
+                <h2 className={reveal(styles.marginHeading)}>{stage.headline}</h2>
+                <p className={reveal(styles.marginBody)}>{stage.body}</p>
+              </div>
+            </div>
           </div>
-          <p className={reveal(styles.dBody)}>{stage.body}</p>
-        </div>
-      )}
+        )}
 
-      {stage.variant === 'E' && (
-        <div className={styles.bracketedStat}>
-          <span className={reveal(styles.statLabel)}>{stage.statLabel}</span>
-          <span className={reveal(styles.statDetail)}>{stage.stat}</span>
-          <p className={reveal(styles.statLine)}>{stage.body}</p>
-        </div>
-      )}
+        {stage.variant === 'C' && (
+          <div className={styles.questionAnswer}>
+            <div className={styles.stageMetaHeader}>
+              <span className={styles.stageTag}>{`Stage ${stage.number}`}</span>
+              <span className={styles.stageSubtag}>Diagnostic Map</span>
+            </div>
+            <h2 className={reveal(styles.qaHeading)}>{stage.headline}</h2>
+            <p className={reveal(styles.qaBody)}>{stage.body}</p>
+          </div>
+        )}
+
+        {stage.variant === 'D' && (
+          <div className={styles.reversedWeight}>
+            <div className={styles.stageMetaHeaderFull}>
+              <span className={styles.stageTag}>{`Stage ${stage.number}`}</span>
+              <span className={styles.stageSubtag}>System Scope</span>
+            </div>
+            <div className={styles.reversedGrid}>
+              <div className={styles.headingColumn}>
+                <h2 className={reveal(styles.dHeading)}>{stage.headline}</h2>
+              </div>
+              <p className={reveal(styles.dBody)}>{stage.body}</p>
+            </div>
+          </div>
+        )}
+
+        {stage.variant === 'E' && (
+          <div className={styles.bracketedStat}>
+            <div className={styles.stageMetaHeader}>
+              <span className={styles.stageTag}>{`Stage ${stage.number}`}</span>
+              <span className={styles.stageSubtag}>Commitment Guarantee</span>
+            </div>
+            <div className={styles.statLayout}>
+              <div className={styles.statBox}>
+                <span className={reveal(styles.statLabel)}>{stage.statLabel}</span>
+                <span className={reveal(styles.statDetail)}>{stage.stat}</span>
+              </div>
+              <p className={reveal(styles.statLine)}>{stage.body}</p>
+            </div>
+          </div>
+        )}
+      </div>
     </section>
   )
 }

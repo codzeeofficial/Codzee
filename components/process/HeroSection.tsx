@@ -12,6 +12,10 @@ export default function HeroSection() {
   return (
     <section className={styles.hero}>
       <div className={styles.inner}>
+        <div className={styles.kickerRow}>
+          <span className={styles.kickerDot} aria-hidden="true" />
+          <span className={styles.kicker}>The Delivery Model</span>
+        </div>
         <h1
           ref={headlineRef as React.RefObject<HTMLHeadingElement>}
           className={isHeadlineVisible ? `${styles.headline} ${styles.visible}` : styles.headline}
