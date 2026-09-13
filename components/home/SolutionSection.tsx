@@ -11,14 +11,25 @@ export default function SolutionSection({ content }: SolutionSectionProps) {
   return (
     <section className={styles.section}>
       <div className={styles.head}>
-        <h2 className={styles.heading}>{heading}</h2>
+        <div className={styles.headingWrap}>
+          <span className={styles.sectionKicker}>Root Cause</span>
+          <h2 className={styles.heading}>{heading}</h2>
+        </div>
         <p className={styles.supporting}>{supportingText}</p>
       </div>
+
       <div className={styles.panelRow}>
-        {situations.map((situation) => (
+        {situations.map((situation, index) => (
           <article key={situation.id} className={styles.panel}>
-            <span className={styles.panelTag}>{situation.label}</span>
+            <div className={styles.panelHeader}>
+              <span className={styles.panelIndex}>0{index + 1}</span>
+              <span className={styles.panelTag}>{situation.label}</span>
+            </div>
             <p className={styles.panelDescription}>{situation.description}</p>
+            <div className={styles.panelFooter}>
+              <span className={styles.panelStatusIndicator} aria-hidden="true" />
+              <span className={styles.panelStatusText}>Common Failure Mode</span>
+            </div>
           </article>
         ))}
       </div>

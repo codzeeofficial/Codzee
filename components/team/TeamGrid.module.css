@@ -1,8 +1,38 @@
+.section {
+  width: 100%;
+  padding-inline: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: var(--space-12);
-  padding: 0 var(--space-8);
+  opacity: 0;
+  transform: translateY(var(--reveal-distance-body));
+  transition:
+    opacity var(--duration-reveal-body) var(--ease-standard),
+    transform var(--duration-reveal-body) var(--ease-standard);
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: var(--team-grid-desktop);
+    column-gap: var(--space-8);
+    row-gap: var(--space-16);
+  }
+}
+
+.visible {
+  opacity: var(--opacity-full);
+  transform: translateY(0);
 }
 
 .card {
@@ -13,8 +43,9 @@
 .photoWrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: var(--ratio-portrait);
   border-radius: var(--radius-card);
+  border: var(--bw-hairline) solid var(--color-border-card);
   overflow: hidden;
   background-color: var(--color-gray-fill);
 }
@@ -23,35 +54,47 @@
   object-fit: cover;
 }
 
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface-subtle);
+}
+
+.monogram {
+  font-family: var(--font-heading);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-gray-faint);
+  user-select: none;
+}
+
 .name {
+  margin: 0;
   font-family: var(--font-heading);
   font-weight: var(--fw-bold);
   font-size: var(--fs-lg);
+  color: var(--color-text-primary);
   margin-top: var(--space-5);
 }
 
 .role {
+  margin: 0;
   font-family: var(--font-body);
   font-size: var(--fs-xs);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-tertiary);
   margin-top: var(--space-1);
 }
 
 .description {
+  margin: 0;
   font-family: var(--font-body);
   font-size: var(--fs-sm);
-  line-height: 1.5;
+  line-height: var(--lh-body);
+  color: var(--color-text-secondary);
   margin-top: var(--space-3);
-}
-
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(16.25rem, 1fr));
-    column-gap: var(--space-8);
-    row-gap: var(--space-16);
-    padding: 0;
-    width: var(--container-max);
-    margin: 0 auto;
-  }
 }

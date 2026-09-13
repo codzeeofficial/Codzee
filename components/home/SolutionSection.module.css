@@ -1,13 +1,14 @@
 .section {
-  width: var(--container-max);
+  width: 100%;
+  max-width: var(--container-max);
   margin-inline: auto;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--space-32);
-  padding-block: var(--space-16);
+  gap: var(--space-16);
+  padding-block: var(--space-20);
   padding-inline: var(--padding-mobile);
+  box-sizing: border-box;
 }
 
 .head {
@@ -16,28 +17,42 @@
   gap: var(--space-6);
 }
 
+.headingWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sectionKicker {
+  font-family: var(--font-body);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
 .heading {
   font-family: var(--font-heading);
   font-weight: var(--fw-semibold);
-  color: var(--color-black);
-  line-height: 1.1;
+  color: var(--color-text-primary);
+  line-height: var(--lh-snug);
   font-size: var(--fs-hero-secondary);
   width: fit-content;
+  letter-spacing: var(--ls-snug);
+  margin: 0;
 }
 
 .supporting {
   font-family: var(--font-body);
   font-weight: var(--fw-regular);
-  color: var(--color-black);
-  font-size: clamp(
-    1rem,
-    calc(1rem + 0.3125rem * ((100vw - var(--fluid-min-vw)) / (var(--fluid-max-vw) - var(--fluid-min-vw)))),
-    1.3125rem
-  );
-  line-height: 1.5;
-  padding-top: var(--space-8);
+  color: var(--color-text-secondary);
+  font-size: var(--solution-supporting-size);
+  line-height: var(--lh-relaxed);
+  padding-top: var(--space-4);
   width: fit-content;
-  max-width: 40ch;
+  max-width: var(--max-ch-reading);
+  margin: 0;
 }
 
 .panelRow {
@@ -48,27 +63,78 @@
 
 .panel {
   background-color: var(--color-surface);
-  border: 1px solid var(--color-gray-line);
+  border: var(--bw-hairline) solid var(--color-border-card);
   border-radius: var(--radius-card);
-  padding: var(--space-6);
+  padding: var(--space-8);
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-all-fast);
+}
+
+.panel:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(calc(-1 * var(--space-1)));
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panelIndex {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-muted);
+  letter-spacing: var(--ls-wide);
 }
 
 .panelTag {
   font-family: var(--font-heading);
   font-weight: var(--fw-semibold);
-  font-size: var(--fs-md);
-  color: var(--color-black);
+  font-size: var(--fs-sm);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-subtle);
+  border: var(--bw-hairline) solid var(--color-border-subtle);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
 }
 
 .panelDescription {
   font-family: var(--font-body);
   font-weight: var(--fw-regular);
   font-size: var(--fs-sm);
-  line-height: 1.5;
-  color: var(--color-black);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.panelFooter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: var(--bw-hairline) solid var(--color-border-subtle);
+}
+
+.panelStatusIndicator {
+  width: var(--size-dot-sm);
+  height: var(--size-dot-sm);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-text-muted);
+}
+
+.panelStatusText {
+  font-family: var(--font-body);
+  font-size: var(--fs-2xs);
+  color: var(--color-text-muted);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
@@ -79,34 +145,32 @@
   .head {
     flex-direction: row;
     align-items: flex-start;
-    gap: 80px;
+    gap: var(--gap-head-desktop);
   }
 
-  .heading {
-    flex: 1.25;
-    width: auto;
+  .headingWrap {
+    flex: var(--flex-head-left);
   }
 
   .supporting {
-    flex: 1;
-    width: auto;
-    max-width: none;
+    flex: var(--flex-head-right);
     padding-top: 0;
-    padding-left: 0;
   }
 
   .panelRow {
     flex-direction: row;
-    gap: var(--space-8);
+    gap: var(--space-6);
   }
 
   .panel {
-    flex: 1;
+    flex: var(--flex-head-right);
   }
 }
 
 @media (min-width: 1024px) {
   .section {
     padding-inline: 0;
+    gap: var(--space-20);
+    padding-block: var(--space-24);
   }
 }

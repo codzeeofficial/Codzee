@@ -9,9 +9,18 @@ export default function HeroSection() {
 
   return (
     <section ref={ref} className={styles.hero}>
-      <h1 className={isVisible ? `${styles.statement} ${styles.visible}` : styles.statement}>
-        {aboutContent.hero.statement}
-      </h1>
+      <div className={styles.container}>
+        <div className={styles.kickerRow}>
+          <span className={styles.kickerDot} aria-hidden="true" />
+          <span className={styles.kicker}>The Studio</span>
+        </div>
+        <h1 className={isVisible ? `${styles.statement} ${styles.visible}` : styles.statement}>
+          {aboutContent.hero.statement}
+        </h1>
+        <p className={styles.subline}>
+          Founding story, engineering principles, and why we build products rather than pages.
+        </p>
+      </div>
     </section>
   )
 }

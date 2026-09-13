@@ -42,25 +42,34 @@ export const homeContent: HomeContent = {
       {
         id: 'pennify',
         title: 'Pennify',
+        category: 'Financial Operations',
         problemStatement:
-          'Expense tracking already existed everywhere \u2014 just never in a way that fit how this business actually worked.',
+          'Expense tracking already existed everywhere — just never in a way that fit how this business actually worked.',
         imageAlt: 'Pennify expense tracking product dashboard',
         href: ROUTES.caseStudies.pennify,
+        tags: ['Next.js', 'PostgreSQL', 'Design System'],
+        metric: '94% time reduction in monthly reconciliations',
       },
       {
         id: 'orvari',
         title: 'Orvari',
+        category: 'Commerce Infrastructure',
         problemStatement:
-          'Shopify assumes a fulfilment model that doesn\u2019t match how COD businesses actually operate.',
+          'Shopify assumes a fulfilment model that doesn’t match how COD businesses actually operate.',
         imageAlt: 'Orvari commerce operating system admin interface',
         href: ROUTES.caseStudies.orvari,
+        tags: ['Full-Stack Engine', 'Realtime Inventory', 'Edge APIs'],
+        metric: 'Zero order sync failures across 12,000+ daily orders',
       },
       {
         id: 'zhabyart',
         title: 'Zhabyart',
-        problemStatement: 'The work was extraordinary. The website didn\u2019t say so.',
+        category: 'Digital Flagship',
+        problemStatement: 'The work was extraordinary. The website didn’t say so.',
         imageAlt: 'Zhabyart atmospheric digital presence',
         href: ROUTES.caseStudies.zhabyart,
+        tags: ['WebGL Motion', 'Fluid Typography', 'Custom CMS'],
+        metric: '3.4x average session duration post-launch',
       },
     ],
   },
@@ -83,8 +92,46 @@ export const homeContent: HomeContent = {
   process: {
     heading: 'What happens after you reach out?',
     supportingText:
-      'There\u2019s a clear path from a first conversation to a finished product, and every step of it happens before you have to guess what comes next.',
-    stages: [],
+      'There’s a clear path from a first conversation to a finished product, and every step of it happens before you have to guess what comes next.',
+    stages: [
+      {
+        id: 'first-call',
+        number: '01',
+        title: 'First Call',
+        description:
+          'A 30-minute discovery conversation about your specific problem — not a sales pitch. We listen until we understand what is broken, missing, or built wrong.',
+        duration: '30 min call',
+        deliverables: ['Scope evaluation', 'Technical feasibility analysis'],
+      },
+      {
+        id: 'the-map',
+        number: '02',
+        title: 'Problem Map',
+        description:
+          'A visual whiteboard-style blueprint of the system architecture and proposed execution roadmap before any contract or invoice exists.',
+        duration: '48h delivery',
+        deliverables: ['System blueprint', 'Decision log', 'Cost forecast'],
+      },
+      {
+        id: 'scoped-build',
+        number: '03',
+        title: 'Scoped Build',
+        description:
+          'The core production phase where features are engineered against locked documentation, tested continuously, and deployed in weekly milestones.',
+        duration: '2–4 weeks',
+        isHub: true,
+        deliverables: ['Production code', 'Automated testing', 'Weekly staging releases'],
+      },
+      {
+        id: 'handover',
+        number: '04',
+        title: 'Testing & Handover',
+        description:
+          'Dedicated QA and security passes followed by complete repository handover. Includes 90 days of guaranteed post-launch maintenance.',
+        duration: '90 days support',
+        deliverables: ['Full repository transfer', 'Deployment pipeline', '90-day warranty'],
+      },
+    ],
   },
 
   contact: {

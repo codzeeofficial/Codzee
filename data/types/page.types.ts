@@ -49,6 +49,9 @@ export interface HomeWorkProject {
   problemStatement: string
   imageAlt: string
   href: string
+  category?: string
+  tags?: string[]
+  metric?: string
 }
 
 export interface HomeWorkContent {
@@ -66,6 +69,7 @@ export interface HomeCapabilityItem {
   id: string
   title: string
   description: string
+  deliverables?: string[]
 }
 
 export interface HomeCapabilitiesContent {
@@ -79,6 +83,9 @@ export interface HomeProcessStage {
   number: string
   title: string
   description: string
+  duration?: string
+  isHub?: boolean
+  deliverables?: string[]
 }
 
 export interface HomeProcessContent {

@@ -10,12 +10,15 @@ export default function PerspectiveSection() {
   return (
     <section className={styles.section}>
       <div ref={ref as React.RefObject<HTMLDivElement>} className={styles.grid}>
-        <h2 className={isVisible ? `${styles.heading} ${styles.visible}` : styles.heading}>
-          {aboutContent.perspective.heading}
-        </h2>
+        <div className={styles.headColumn}>
+          <span className={styles.kicker}>03 / Perspective</span>
+          <h2 className={isVisible ? `${styles.heading} ${styles.visible}` : styles.heading}>
+            {aboutContent.perspective.heading}
+          </h2>
+        </div>
         <div className={isVisible ? `${styles.body} ${styles.visible}` : styles.body}>
           {aboutContent.perspective.paragraphs.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+            <p key={index} className={styles.paragraph}>{paragraph}</p>
           ))}
         </div>
       </div>
