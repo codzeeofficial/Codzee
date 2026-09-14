@@ -244,3 +244,51 @@ export interface ProcessContent {
   never: ProcessNeverContent
   closing: ProcessClosingContent
 }
+
+export interface ContactReassurance {
+  number: string
+  lead: string
+  detail: string
+}
+
+export interface ContactFormContent {
+  step1: {
+    title: string
+    nameLabel: string
+    namePlaceholder: string
+    emailLabel: string
+    emailPlaceholder: string
+  }
+  step2: {
+    title: string
+    companyLabel: string
+    companyPlaceholder: string
+    roleLabel: string
+    rolePlaceholder: string
+  }
+  step3: {
+    title: string
+    problemLabel: string
+    problemPlaceholder: string
+  }
+  step4: {
+    title: string
+    submitButtonLabel: string
+  }
+  confirmation: {
+    heading: string
+    message: string
+    subline: string
+  }
+}
+
+export interface ContactPageContent {
+  slug: string
+  title: string
+  metaDescription: string
+  leadIn: string
+  heading: string
+  supportingText: string
+  reassurances: ContactReassurance[]
+  form: ContactFormContent
+}

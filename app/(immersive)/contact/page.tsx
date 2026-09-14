@@ -1,7 +1,12 @@
+import type { Metadata } from 'next'
+import ContactSection from '@/components/contact/ContactSection'
+import { contactContent } from '@/data/pages/contact'
+
+export const metadata: Metadata = {
+  title: contactContent.title,
+  description: contactContent.metaDescription,
+}
+
 export default function ContactPage() {
-  return (
-    <div>
-      <h1>Contact placeholder — Phase 8 replaces this</h1>
-    </div>
-  )
+  return <ContactSection />
 }

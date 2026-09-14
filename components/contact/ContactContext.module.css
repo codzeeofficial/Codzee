@@ -1,0 +1,95 @@
+.context {
+  display: flex;
+  flex-direction: column;
+}
+
+.kickerRow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.kickerDot {
+  width: var(--size-dot-sm);
+  height: var(--size-dot-sm);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-text-primary);
+}
+
+.kicker {
+  font-family: var(--font-body);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  max-width: var(--max-ch-narrow);
+}
+
+.supportingText {
+  margin: 0;
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
+  max-width: var(--max-ch-reading);
+}
+
+.reassurancesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+  padding-top: var(--space-8);
+  border-top: var(--bw-hairline) solid var(--color-border-subtle);
+  max-width: var(--max-ch-reading);
+}
+
+.reassuranceItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.itemHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.itemNumber {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-muted);
+}
+
+.itemLead {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--lh-snug);
+}
+
+.itemDetail {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-secondary);
+  padding-left: var(--space-5);
+}
