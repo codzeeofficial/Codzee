@@ -264,4 +264,12 @@ button {
   --opacity-muted: 0.65;
   --opacity-full: 1;
   --blur-glass: blur(12px);
+
+  --services-hero-size: clamp(2.25rem, 4.2vw, 3.75rem);
+  --services-heading-size: clamp(2rem, 3.5vw, 3.25rem);
+  --services-subheading-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  --services-num-size: clamp(2.5rem, 5vw, 4.5rem);
+
+  --capabilities-hero-size: clamp(2.25rem, 4vw, 3.5rem);
+  --capabilities-heading-size: clamp(1.85rem, 3.2vw, 2.75rem);
 }

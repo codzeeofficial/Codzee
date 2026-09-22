@@ -292,3 +292,139 @@ export interface ContactPageContent {
   reassurances: ContactReassurance[]
   form: ContactFormContent
 }
+
+export interface ClosingInvitationContent {
+  line: string
+  cta: CTALink
+}
+
+export type ServiceLayout =
+  | 'asymmetricColumns'
+  | 'rightOffsetStack'
+  | 'splitHeroBlock'
+  | 'topHeavySubColumns'
+  | 'diagonalFocal'
+
+export interface ServiceBase {
+  id: string
+  number: string
+  label: string
+  heading: string
+}
+
+export interface ServiceSubItem {
+  number: string
+  title: string
+  description: string
+}
+
+export interface ServiceSplitText {
+  title: string
+  paragraph: string
+}
+
+export interface ServiceProductEngineering extends ServiceBase {
+  layout: 'asymmetricColumns'
+  supportingLine: string
+  paragraph: string
+  scopeItems: string[]
+}
+
+export interface ServiceSystemsArchitecture extends ServiceBase {
+  layout: 'rightOffsetStack'
+  paragraph: string
+  components: string[]
+}
+
+export interface ServiceInterfaceCraft extends ServiceBase {
+  layout: 'splitHeroBlock'
+  paragraph: string
+  metrics: { label: string; value: string }[]
+}
+
+export interface ServicePlatformOperations extends ServiceBase {
+  layout: 'topHeavySubColumns'
+  paragraph: string
+  subItems: [ServiceSubItem, ServiceSubItem, ServiceSubItem]
+}
+
+export interface ServiceMobile extends ServiceBase {
+  layout: 'diagonalFocal'
+  supportingLine: string
+  split: ServiceSplitText
+}
+
+export interface ServiceBrandFoundation extends ServiceBase {
+  layout: 'asymmetricColumns'
+  supportingLine: string
+  paragraph: string
+  assets: string[]
+}
+
+export type ServiceEntry =
+  | ServiceProductEngineering
+  | ServiceSystemsArchitecture
+  | ServiceInterfaceCraft
+  | ServicePlatformOperations
+  | ServiceMobile
+  | ServiceBrandFoundation
+
+export interface ServicesHeroContent {
+  headline: string
+  supportingLine: string
+}
+
+export interface ServicesContent {
+  slug: string
+  title: string
+  metaDescription: string
+  hero: ServicesHeroContent
+  services: ServiceEntry[]
+}
+export interface CapabilityTier {
+  id: string
+  label: string
+  description: string
+}
+
+export interface CapabilityComplexityContent {
+  heading: string
+  paragraph: string
+  tiers: CapabilityTier[]
+}
+
+export interface CapabilityIndexContent {
+  label: string
+  line: string
+}
+
+export interface HeadlineHeroContent {
+  headline: string
+  supportingLine: string
+}
+
+export interface CapabilityDetail {
+  paragraphs: string[]
+  specifics: string[]
+  proof: CTALink[]
+}
+
+export interface CapabilityEntry {
+  id: string
+  number: string
+  title: string
+  summary: string
+  detail: CapabilityDetail
+}
+
+export interface CapabilitiesContent {
+  slug: string
+  title: string
+  metaDescription: string
+  hero: HeadlineHeroContent
+  complexity: CapabilityComplexityContent
+  index: CapabilityIndexContent
+  capabilities: CapabilityEntry[]
+  workInvitation: ClosingInvitationContent
+  closing: ClosingInvitationContent
+}

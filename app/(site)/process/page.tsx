@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import HeroSection from '@/components/process/HeroSection'
 import StagesGroup from '@/components/process/StagesGroup'
 import NeverSection from '@/components/process/NeverSection'
-import ClosingSection from '@/components/process/ClosingSection'
+import { ContactSection } from '@/components/home/ContactSection'
 import { processContent } from '@/data/pages/process'
+import { homeContent } from '@/data/pages/home'
 
 export const metadata: Metadata = {
   title: processContent.title,
@@ -16,7 +17,7 @@ export default function ProcessPage() {
       <HeroSection />
       <StagesGroup stages={processContent.stages} />
       <NeverSection />
-      <ClosingSection />
+      <ContactSection content={homeContent.contact} />
     </>
   )
 }

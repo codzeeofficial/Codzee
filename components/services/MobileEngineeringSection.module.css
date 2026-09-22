@@ -1,0 +1,194 @@
+.section {
+  width: 100%;
+  padding-block: var(--space-16);
+  padding-inline: var(--padding-mobile);
+  scroll-margin-top: var(--space-24);
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-inline: var(--padding-tablet);
+    padding-block: var(--space-20);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-inline: 0;
+    padding-block: var(--space-24);
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: var(--space-16);
+    align-items: center;
+  }
+}
+
+.primaryCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(var(--space-4));
+  transition:
+    opacity 420ms var(--ease-standard),
+    transform 420ms var(--ease-standard);
+}
+
+.syncCard {
+  background-color: var(--color-surface);
+  border: var(--bw-hairline) solid var(--color-border-card);
+  border-radius: var(--radius-card);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  opacity: 0;
+  transform: translateY(var(--space-4));
+  transition:
+    opacity 420ms var(--ease-standard) 80ms,
+    transform 420ms var(--ease-standard) 80ms;
+}
+
+@media (min-width: 768px) {
+  .syncCard {
+    padding: var(--space-10);
+  }
+}
+
+.visible {
+  opacity: var(--opacity-full);
+  transform: translateY(0);
+}
+
+.kickerRow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.kickerDot {
+  width: var(--size-dot-sm);
+  height: var(--size-dot-sm);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-text-primary);
+}
+
+.kicker {
+  font-family: var(--font-body);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-tertiary);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--services-heading-size);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  max-width: 32rem;
+}
+
+.supportingLine {
+  margin: 0;
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  max-width: 30rem;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-3);
+  border-bottom: var(--bw-hairline) solid var(--color-border-subtle);
+}
+
+.statusWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.syncLiveDot {
+  width: var(--size-dot-sm);
+  height: var(--size-dot-sm);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-status-live);
+}
+
+.syncStatusLabel {
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  letter-spacing: var(--ls-tight);
+}
+
+.runtimeBadge {
+  font-family: var(--font-body);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-muted);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.splitTitle {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--services-subheading-size);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  line-height: var(--lh-snug);
+}
+
+.splitParagraph {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+}
+
+.specBadgesRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.specBadge {
+  font-family: var(--font-body);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-subtle);
+  border: var(--bw-hairline) solid var(--color-border-card);
+  border-radius: var(--radius-small);
+  padding: var(--space-1) var(--space-3);
+}

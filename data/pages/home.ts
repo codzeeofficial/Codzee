@@ -86,7 +86,32 @@ export const homeContent: HomeContent = {
     heading: 'We don\u2019t skip the hard parts.',
     supportingText:
       'The parts that decide whether software actually works are usually invisible. That\u2019s where we spend most of our time.',
-    items: [],
+    items: [
+      {
+        id: 'every-screen-agrees',
+        title: 'Screen Sync',
+        description:
+          'Same records, same numbers — on web and phone, even offline.',
+      },
+      {
+        id: 'right-access-for-everyone',
+        title: 'Access Control',
+        description:
+          'Every user sees and changes only what belongs to them, from full control to a single task.',
+      },
+      {
+        id: 'payments-and-paid-plans',
+        title: 'Payments',
+        description:
+          'Free and paid tiers built as one system, so the product knows what each person has paid for.',
+      },
+      {
+        id: 'control-without-a-developer',
+        title: 'Site Control',
+        description:
+          'The people who run the business can update the public site themselves, no developer needed.',
+      },
+    ],
   },
 
   process: {
